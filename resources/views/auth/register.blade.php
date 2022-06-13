@@ -18,15 +18,14 @@
         <div class="wrapper">
 
             <div class="text-center mt-4 name mb-3">
-                Вход
+                Регистрация
             </div>
             <form method="POST" action="{{ route('register') }}">
                 @csrf
-
                 <div class="form-field d-flex align-items-center">
                     <span class="fas fa-key"></span>
-                    <input id="name" type="text" class="@error('name') is-invalid @enderror" name="name"
-                           value="{{ old('name') }}" required autocomplete="name" placeholder="Имя" autofocus>
+                    <input id="login" type="text" class="@error('login') is-invalid @enderror" name="login"
+                           value="{{ old('login') }}" required autocomplete="login" placeholder="Логин" autofocus>
 
                 </div>
 
@@ -38,8 +37,34 @@
 
 
                 </div>
+                <div class="form-field d-flex align-items-center">
+                    <span class="fas fa-key"></span>
+                    <input id="name" type="text" class="@error('name') is-invalid @enderror" name="name"
+                           value="{{ old('name') }}" required autocomplete="name" placeholder="Имя" >
+
+                </div>
+
+                <div class="form-field d-flex align-items-center">
+                    <span class="fas fa-key"></span>
+                    <input id="lastname" type="text" class="@error('lastname') is-invalid @enderror" name="lastname"
+                           value="{{ old('lastname') }}" required autocomplete="lastname" placeholder="Фамилия" >
+
+                </div>
 
 
+                <div class="form-field d-flex align-items-center">
+                    <span class="fas fa-key"></span>
+                    <input id="patronymic" type="text" class="@error('patronymic') is-invalid @enderror" name="patronymic"
+                           value="{{ old('patronymic') }}" required autocomplete="patronymic" placeholder="Отчество" >
+
+                </div>
+
+                <div class="form-field d-flex align-items-center">
+                    <span class="fas fa-key"></span>
+                    <input id="phone" type="text" class="@error('phone') is-invalid @enderror" name="phone"
+                           value="{{ old('phone') }}" required autocomplete="patronymic" placeholder="Телефон" >
+
+                </div>
                 <div class="form-field d-flex align-items-center">
                     <span class="fas fa-key"></span>
                     <input id="password" type="password"
@@ -54,7 +79,7 @@
                            autocomplete="new-password" placeholder="Еще раз Пароль">
                 </div>
 
-                <button class="btn mt-3">Войти</button>
+                <button class="btn mt-3">Создать аккаунт</button>
             </form>
             <div class="text-center fs-6">
                 @if (Route::has('password.request'))
