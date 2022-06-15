@@ -12,6 +12,7 @@ class Content extends Model
     protected $fillable = [
         'name',
         'content',
-        'number'
+        'number',
+        'path'
     ];
 }

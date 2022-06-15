@@ -14,7 +14,7 @@
 
                         <h3 class="">Создание главы курса</h3>
                         <hr>
-                        <form action="{{ route('addContent') }}" method="POST">
+                        <form action="{{ route('addContent') }}" method="POST" enctype="multipart/form-data">
                             @if($errors->any())
                                 <div class="alert alert-danger">
                                     @foreach($errors->all() as $error)
@@ -64,7 +64,6 @@
 
                                                 <option value="{{ $content->number }}">{{ $content->name }}</option>
 
-
                                             @endforeach
 
                                         </select>
@@ -73,7 +72,13 @@
                                 </div>
 
                             </div>
+                            <div class="d-flex justify-content-center">
 
+                                <div class="mb-3 w-50 text-center">
+                                    <label for="img" class="form-label">Картинка(необязательное поле)</label>
+                                    <input type="file" class="form-control" name="img" id="img">
+                                </div>
+                            </div>
 
                             <div class="d-flex justify-content-center mt-4 mb-4">
                                 <div class="form-floating">

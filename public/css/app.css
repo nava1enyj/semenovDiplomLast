@@ -10285,6 +10285,11 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+.img-content {
+  width: 600px;
+  height: 450px;
+}
+
 body {
   background: #ecf0f3;
 }

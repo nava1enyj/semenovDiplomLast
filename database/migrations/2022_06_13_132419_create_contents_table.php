@@ -18,6 +18,7 @@ class CreateContentsTable extends Migration
             $table->string('name');
             $table->text('content');
             $table->bigInteger('number')->index();
+            $table->string('path')->nullable(true);
             $table->timestamps();
         });
     }

@@ -47,10 +47,17 @@ class AdminController extends Controller
 
         }
 
+        $path = '';
+
+        if(request()->file('img')){
+            $path = request()->file('img')->store('uploads/','public');
+        }
+
         Content::create([
             'name' => $request->name,
             'content' => $request['content'],
-            'number' => $number
+            'number' => $number,
+            'path' => $path,
         ]);
         return redirect(route('admin'))->with('success', 'Вы успешно добавили главу');
     }

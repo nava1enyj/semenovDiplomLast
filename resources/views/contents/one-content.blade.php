@@ -17,6 +17,14 @@
                     <hr>
 
                     <div class="text-break mt-3">{{ $content->content }}</div>
+                    @if( $content->path !== null )
+                        <div class="d-flex justify-content-center mt-3">
+
+                            <img src="{{ '/storage/' . $content->path }}" class="rounded img-content" alt="">
+
+                        </div>
+
+                    @endif
 
 
                 </div>
